@@ -134,7 +134,7 @@ void PadTestScene::frame()
 {
     padTest.gpu().clear();
 
-    if (framecount++ % (60 * 5) == 0)
+    if (framecount++ % (60 * 5) == 0 || !padTest.m_input.isPadConnected(static_cast<psyqo::AdvancedPad::Pad>(padindex)))
     {
         // Iterate through the pads, stop on next connected pad
         while (!(padTest.m_input.isPadConnected(static_cast<psyqo::AdvancedPad::Pad>(++padindex))) && padindex < 8)
